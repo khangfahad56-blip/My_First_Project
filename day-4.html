@@ -6,16 +6,16 @@
     <title>Information Theif(Facebook)</title>
     <style>
         body{
-            background-color: hotpink;
+            background-color: lightblue;
             font-family: Arial, Helvetica, sans-serif;
-        }
-        date{
-            background-color: blue;
         }
     </style>
 </head>
 <body>
     <form action="#">
+        <fieldset>
+        <legend>Facebook<del>(Information Theif)</del></legend>
+        <br>
         <label for="nam">
             Name : <input type="text" name="name_for_PHP" id="nam">
         </label>
@@ -28,6 +28,16 @@
         <br>
         <label for="pass">
             Password : <input type="password" name="password_for_PHP" id="pass">
+        </label>
+        <br>
+        <br>
+        <label for="phone">
+            Phone Number : <input type="text" name="phone_for_PHP" id="phone"> 
+        </label>
+        <br>
+        <br>
+        <label for="age">
+            Age : <input type="number" name="age_for_PHP" id="age">
         </label>
         <br>
         <br>
@@ -47,6 +57,26 @@
         </label>
         <br>
         <br>
+        <label for="smoke">
+            Do you Smoke<input type="checkbox" id = "smoke">
+        </label>
+        <br>
+        <br>
+        <label for="drink">
+            Do you Drink<input type="checkbox" id = "drink">
+        </label>
+        <br>
+        <br>
+        <label for="kill">
+            Do you Kill<input type="checkbox" id = "kill">
+        </label>
+        <br>
+        <br>
+        <label for="trump">
+            Do you Suppot Trump<input type="checkbox" id = "trump">
+        </label>
+        <br>
+        <br>
         <label>
             <input type="submit" value="Click ME">
         </label>
@@ -55,6 +85,7 @@
         <label>
             <input type="reset" value="Don't Click Me">
         </label>
+        </fieldset>
     </form>
 </body>
 </html>
