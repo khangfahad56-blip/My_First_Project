@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE ACADEMY ENROLLMENT FORM</title>
+    <style>
+        body{
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1>STEP INTO TECH: CODE ACADEMY ENROLLMENT FORM</h1>
+    <p>Professional IT Training & Internship Programs (Leading to Jobs & Internships)</p>
+    <h2>STUDENT INFORMATION</h2>
+    <form action="#" method="get">
+        <label for="nam">1. Full Name:</label>
+        <input type="text" name="name" id="nam" required><br><br>
+
+        <label for="fath_nam">2. Father's Name:</label>
+        <input type="text" name="father_name" id="fath_nam" required><br><br>
+
+        <label>3. Gender: </label>
+        <input type="radio" name="gender" id="gender_male" required>
+        <label for="gender_male">Male</label>
+
+        <input type="radio" name="gender" id="gender_female" required>
+        <label for="gender_female"> Female</label>
+
+        <input type="radio" name="gender" id="gender_other" required>
+        <label for="gender_other"> Other</label>
+
+        <label for="age">4. Age:</label>
+        <input type="number" min="10" max="60" name="age" id="age" required><br><br>
+
+        <label for="adds">5. Home Address:</label>
+        <input type="text" name="address" id="adds" required><br><br>
+
+        <label for="cnic">6. CNIC/Form-B Number (Optional):</label>
+        <input type="text" name="cnic/form-b" id="cnic"><br><br>
+
+        <label for="num">7. Phone Number (Whatsapp):</label>
+        <input type="tel" name="number" id="num" required><br><br>
+
+        <label for="mail">8. Email Address (if available):</label>
+        <input type="email" name="email" id="mail"><br><br>
+        <label for="edu">9. Current Qualification:</label>
+        <select name="education" id="edu" required>
+            <option>Matriculation / Metric</option>
+            <option>O-Levels</option>
+            <option>FSc</option>
+            <option>ICS</option>
+            <option>I.Com</option>
+            <option>FA</option>
+            <option>A-Levels</option>
+            <option>BS</option>
+            <option>BSc</option>
+            <option>ADP</option>
+            <option>MBBS</option>
+            <option>PhD</option>
+            <option>Madrassah</option>
+            <option>Religious Education</option>
+        </select><br><br>
+        <label for="area">10. Area/City:</label>
+        <select name="area/city" id="area" required>
+        <option>Peshawar</option>
+        <option>Mardan</option>
+        <option>Abbottabad</option>
+        <option>Mingora (Swat)</option>
+        <option>Mansehra</option>
+        <option>Nowshera</option>
+        <option>Swabi</option>
+        <option>Charsadda</option>
+        <option>Kohat</option>
+        <option>Haripur</option>
+        <option>Dera Ismail Khan</option>
+        <option>Kalam</option>
+        <option>Naran</option>
+        <option>Chitral</option>
+        <option>Bannu</option>
+        </select><br><br>
+        
+        <h2>COURSE INTEREST</h2>
+        <label for="q1">11. Why do you want to join this course?</label><br><br>
+        <input type="text" name="question1" id="q1"><br><br>
+
+        <label>12. Do you have access to a Laptop or PC?</label>
+        <input type="radio" name="pc/laptop" id="yes1">
+        <label for="yes1">Yes</label>
+        <input type="radio" name="pc/laptop" id="no1">
+        <label for="no1">No</label><br><br>
+
+        <label>13. Do you have any computer experience?</label>
+        <input type="radio" name="computer_experience" id="yes2">
+        <label for="yes2">Yes</label>
+        <input type="radio" name="computer_experience" id="no2">
+        <label for="no2">No</label><br><br>
+
+        <label for="q2">14. If yes, which course(s) have you done before?</label>
+        <input type="text" name="question2" id="q2"><br><br>
+
+        <label for="q3">15. From where have you completed your previous course(s)?</label>
+        <input type="text" name="question3" id="q3"><br><br>
+
+        <label>16. How did you hear about this course?</label><br><br>
+        <input type="radio" name="hear" id="fb">
+        <label for="fb">Facebook</label>
+        <input type="radio" name="hear" id="wa">
+        <label for="wa">Whatsapp</label>
+        <input type="radio" name="hear" id="fd">
+        <label for="fd">Friend</label>
+        <input type="radio" name="hear" id="pt">
+        <label for="pt">Poster</label>
+        <input type="radio" name="hear" id="other">
+        <label for="other">Other</label>
+        <input type="text"><br><br>
+
+        <h2>For Office Use Only</h2>
+
+        <label for="reg">Registration No.:</label>
+        <input type="text" id="reg" class="registration">
+        <label for="roll">Roll No.:</label>
+        <input type="text" name="roll number" id="roll">
+        <label for="rec">Received By:</label><br><br>
+        <input type="text" id="rec" class="received">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date"><br><br>
+        <input type="submit"><br><br>
+
+        <h2>Documents Required</h2>
+        <ul>
+            <li>CNIC/Form-B photocopy</li>
+            <li>Educational certificates photocopies </li>
+            <li>2 passport-size photographs </li>
+        </ul>
+</body>
+</html>
