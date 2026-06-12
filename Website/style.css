@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: dodgerblue;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+a{
+    color: white;
+}
+img{
+    width: 20vw;
+    border-radius: 15px;    
+}
+main{
+    padding-left: 25px;
+    padding-right: 25px; 
+}
+main.image{
+    text-align:center;
+}
+ul,ol{
+    padding-left: 35px;
+}
+footer{
+    padding-top: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 9.5vh;
+}
+table,tr,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    height: 30px;
+}
+th{
+    background-color: black;
+    color: white;
+}
+td{
+    background-color: lightgrey;
+}
+table{
+    width:100%;
+}
+input,option,textarea,select{
+    width: 25vw;
+}
+textarea{
+    height: 15vh;
+}
+div.contant{
+    width: 30vw;
+    background-color: gray;
+    padding: 25px;
+}
+input.button{
+    background-color: dodgerblue;
+}
