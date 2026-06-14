@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+aside{
+    float: left;
+    width: 20vw;
+    height: 100vh;
+    background-color: #f0fcfb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+a{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    min-width: 180px;
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Babar Azam Dashboard</title>
+</head>
+<body>
+    <aside>
+        <a href="home.html">&#127968;Home</a><br>
+        <a href="stats.html">&#128202;Stats</a><br>
+        <a href="historical.html">&#9203;Historical</a><br>
+        <a href="suggest.html">&#128161;Suggestions</a><br>
+    </aside>
+    <main>
+        <div class="sugh1">
+            <h1>SUBMIT PLAYER SUGGESTIONS & FEEDBACK</h1>
+        </div>
+        <form action="#">
+        <div class="sugblock">
+            <div class="sugh2">
+                <h2>USER INFORMATION</h2>
+                <hr>
+            </div>
+            <div class="sugname">
+                <label for="name">YOUR NAME:</label><br>
+                <input type="text" name="name" id="name " placeholder="Your Name">
+            </div>
+            <div class="sugrole">
+                <label for="role">YOUR ROLE:(e.g.. Coach,Analyst)</label>
+                <input type="text" name="role" id="role" placeholder="Your Role">
+            </div>
+            <h2>SUGGESTION DETAILS</h2>
+            <hr>
+            <div class="sugtext">
+                <label for="suggest">YOUR SUGGESTION (type advice here):</label>
+                <textarea name="suggest" id="suggest" placeholder="Write your Suggestions"></textarea>
+            </div>
+            <div class="sugformat">
+                <label for="format">CRICKET FORMAT:</label>
+                <select name="format" id="format">
+                    <option value="test">Test</option>
+                    <option value="odi">ODI</option>
+                    <option value="t20i">T20I</option>
+                </select>
+            </div>
+            <div class="sugbuttom">
+                <input type="submit" name="buttom" id="buttom">
+            </div>
+        </div>
+        </form>
+    </main>
+</body>
+</html>
