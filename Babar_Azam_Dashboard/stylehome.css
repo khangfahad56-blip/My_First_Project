@@ -9,7 +9,8 @@
 
 body {
     display: flex;
-    min-height: 100vh;       
+    height: 100vh;      /* CHANGED: Forces the page wrapper to be exactly screen height */
+    overflow: hidden;   /* NEW: Prevents the main window from ever generating a browser scrollbar */
     background-color: #f4f7f9;
     color: #333333;
 }
@@ -19,7 +20,7 @@ body {
    ========================================================================== */
 aside {
     width: 20vw;
-    min-height: 100vh;
+    height: 100vh;     /* CHANGED: Constrains sidebar to match window perfectly */
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -58,13 +59,13 @@ aside a:hover {
    ========================================================================== */
 main {
     flex: 1;
-    min-height: 100vh;
-    /* max-height: 100vh; */
-    padding: 25px 40px;
+    height: 100vh;     /* CHANGED: Locks the workspace down to exact viewport height */
+    padding: 20px 40px; /* SLIGHTLY REDUCED: Frees up vertical pixels */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distributes top headers, center contents, and graphs evenly */
-    gap: 15px;
+    justify-content: space-between; 
+    gap: 12px;         /* SLIGHTLY REDUCED: Pulls content together tightly to avoid clipping */
+    overflow: hidden;   /* NEW: Extra defense line against parent leakages */
 }
 
 h1 {
@@ -85,101 +86,133 @@ hr {
     border-top: 1px solid #e2e8f0;
 }
 
+
+CSS
 /* ==========================================================================
    4. HOME PAGE LAYOUT DECK
    ========================================================================== */
-.homeh1 {
+.homeh1{
     width: 100%;
     border-bottom: 3px solid #0f4c81;
     padding-bottom: 5px;
+    }
+
+/* Row container holding the profile and snapshot stats side-by-side */
+.profile-snapshot-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 42vh;      /* Increased height budget to allow a larger player image */
+    gap: 20px;
 }
 
+/* Left Profile Card (Tall & Slim - Tailored for a crisp portrait image) */
 .homeimg {
     display: flex;
+    flex-direction: column;    
+    justify-content: flex-start; /* Aligns content from the top to maximize image room */
     align-items: center;
-    gap: 35px;
-    width: 100%;
-    height: 22vh; 
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.homeimg img {
-    height: 18vh;
-    width: auto;
-    object-fit: contain;
-}
-
-.imgtitle h2 {
-    font-size: 1.8rem;
-    color: #0f4c81;
-    font-weight: 700;
-}
-
-.imgtitle p {
-    font-size: 1rem;
-    color: #64748b;
-    font-weight: 500;
-}
-
-.homeh2 {
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.homeh2 h3 {
-    grid-column: span 2;
-    font-size: 1.1rem;
-    color: #334155;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 4px;
-    text-transform: uppercase;
-}
-
-.homeh2 h2 {
-    font-size: 1.3rem;
-    color: #1e293b;
-}
-
-.homeh2 h2:nth-of-type(odd) {
-    color: #1f77b4;
-    font-weight: 800;
-    font-size: 1.6rem;
-}
-
-/* LEFT AND RIGHT SIDE-BY-SIDE GRAPH LAYOUT FOR HOME PAGE */
-.graph1, .graph2 {
-    display: inline-block;
-    width: 49%;
-    height: 38vh; 
+    flex: 1.1;                 /* Gives the image block slightly more horizontal width */
+    height: 100%; 
     background-color: #ffffff;
     padding: 15px;
     border-radius: 12px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    vertical-align: top;
+    overflow: hidden;          /* Prevents any container leakage */
 }
 
-.graph1 {
-    margin-right: 1.5%;
+/* Optimized for portrait image input */
+.homeimg img {
+    height: 30vh;              /* Considerably increased height to make Babar's picture large */
+    width: 100%;               /* Spans container width constraints */
+    object-fit: cover;         /* Fills the allocated upper frame beautifully without distortion */
+    object-position: top;      /* Keeps focus on the face/upper body jersey */
+    border-radius: 8px;
 }
 
+.imgtitle {
+    text-align: center;        
+    margin-top: 8px;           /* Clean spacing directly under the expanded photo */
+}
+
+.imgtitle h2 {
+    font-size: 1.4rem; 
+    color: #0f4c81;
+    font-weight: 700;
+}
+
+.imgtitle p {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Right Snapshot Card (Tall & Slim Grid) */
+.homeh2 {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex: 0.9;                 /* Marginally narrower than the portrait frame */
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Perfectly vertical-centers the rank metadata */
+    gap: 8px;
+}
+
+.homeh2 h3 {
+    font-size: 1.1rem;   
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.homeh2 h2 {
+    font-size: 1.05rem;
+    color: #475569;
+    text-align: center;
+}
+
+.homeh2 h2:nth-of-type(odd) {
+    color: #1f77b4;
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+/* Horizontal alignment flex container for graphs */
+.graph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 100%;
+    height: 45vh;              /* Expanded height to make room for full-bleed data visuals */
+}
+
+/* Updated graph rules (Full block cover optimization) */
+.graph1, .graph2 {
+    width: 49%;          
+    height: 100%;      
+    background-color: #ffffff;
+    padding: 10px;             /* Reduced inner padding so graphs expand closer to outer card edges */
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Forces graphs to dynamically cover the outer card container size */
 .graph1 img, .graph2 img {
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: fill;         /* Stretches images to cleanly fill their cards completely */
     display: block;
 }
-
 /* ==========================================================================
    5. STATS PAGE LAYOUT DECK (3x2 SQUARE BOX CORRECTION)
    ========================================================================== */
@@ -189,17 +222,15 @@ hr {
     padding-bottom: 5px;
 }
 
-/* Main horizontal flex row grouping the image container and grid wrapper */
 .stats-main-row {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 40vh; /* Limits upper screen asset scale */
+    height: 38vh;      /* OPTIMIZED FROM 40vh */
     gap: 25px;
     align-items: stretch;
 }
 
-/* Left Profile Image Container */
 .statimg {
     width: 25%;
     background-color: #ffffff;
@@ -213,38 +244,35 @@ hr {
 }
 
 .statimg img {
-    height: 35vh;
+    height: 33vh;      /* ADJUSTED */
     width: auto;
     object-fit: contain;
 }
 
-/* Right-Side 3-Column, 2-Row Structural Layout Box */
 .stats-grid-container {
     width: 75%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Forms 3 columns across */
-    grid-template-rows: repeat(2, 1fr);    /* Forms 2 rows down */
-    gap: 20px;                             /* Generates uniform spacing between square cards */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 15px;          /* ADJUSTED FOR HEIGHT SECURITY */
 }
 
-/* Styling each statblock element as a small square card box */
 .statblock1, .statblock2, .statblock3, .statblock4, .statblock5, .statblock6 {
     background-color: #ffffff;
-    padding: 15px 20px;
+    padding: 12px 15px;
     border-radius: 12px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers labels inside the small squares */
-    gap: 6px;
-    height: 100%;            /* Fills grid allocation slot exactly */
+    justify-content: center; 
+    gap: 4px;
+    height: 100%;            
 }
 
-/* Statblock Card Typography */
 .statblock1 h3, .statblock2 h3, .statblock3 h3, 
 .statblock4 h3, .statblock5 h3, .statblock6 h3 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -252,25 +280,24 @@ hr {
 
 .statblock1 h2, .statblock2 h2, .statblock3 h2, 
 .statblock4 h2, .statblock5 h2, .statblock6 h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #0f4c81;
     font-weight: 700;
 }
 
 .statblock1 p, .statblock2 p, .statblock3 p, .statblock6 p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #475569;
     font-weight: 600;
     background-color: #f8fafc;
-    padding: 3px 8px;
+    padding: 2px 6px;
     border-radius: 4px;
     border-left: 3px solid #1f77b4;
 }
 
-/* Bottom Full-Width Graph Container */
 .graph3 {
     width: 100%;
-    height: 42vh; 
+    height: 38vh;      /* OPTIMIZED FROM 42vh */
     background-color: #ffffff;
     padding: 15px;
     border-radius: 12px;

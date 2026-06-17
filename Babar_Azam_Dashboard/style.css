@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. GLOBAL RESET, FRAMEWORK & BASE STYLES (Shared Across All Pages)
+   ========================================================================== */
 * {
     padding: 0;
     margin: 0;
@@ -6,14 +9,18 @@
 
 body {
     display: flex;
-    min-height: 100vh;       
+    height: 100vh;      /* Locks viewport tightly to screen height framework */
+    overflow: hidden;   /* Prevents global window tracking bar leakages */
     background-color: #f4f7f9;
     color: #333333;
 }
 
+/* ==========================================================================
+   2. NAVIGATION SIDEBAR (ASIDE) (Shared Across All Pages)
+   ========================================================================== */
 aside {
     width: 20vw;
-    min-height: 100vh;
+    height: 100vh;     
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -47,86 +54,607 @@ aside a:hover {
     transform: translateY(-1px);
 }
 
+/* ==========================================================================
+   3. MAIN CONTENT WORKSPACE PANEL (Unified Layout Engine)
+   ========================================================================== */
 main {
     flex: 1;
-    min-height: 100vh;
-    padding: 25px 40px;
+    height: 100vh;     
+    padding: 20px 40px; 
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between; 
+    gap: 12px;         
+    overflow: hidden;   
 }
-.hish1{
-    font-size: 2.5rem;
+
+/* Typography Mechanics */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f4c81;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hish1 {
+    font-size: 2.2rem; 
     font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.h1blue {
+    color: #0f4c81;
+    margin-right: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   4. HOME PAGE DESIGN MODULE
+   ========================================================================== */
+.homeh1 {
+    width: 100%;
+    border-bottom: 3px solid #0f4c81;
     padding-bottom: 5px;
 }
-.h1blue{
-    color: #0f4c81;
+
+/* Row container holding the profile and snapshot stats side-by-side */
+.profile-snapshot-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 42vh;      
+    gap: 20px;
 }
-.hisdrop{
+
+/* Left Profile Card (Tall & Slim) */
+.homeimg {
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between; 
+    align-items: center;
+    flex: 1.1;                 
+    height: 100%; 
+    background-color: #ffffff;
+    padding: 12px;                  
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;          
+}
+
+.homeimg img {
+    height: 24vh;              
+    width: 100%;               
+    object-fit: contain;       
+    display: block;            
+}
+
+.imgtitle {
+    text-align: center;        
+    width: 100%;
+    background-color: #f8fafc; 
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.imgtitle h2 {
+    font-size: 1.25rem;        
+    color: #0f4c81;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.imgtitle p {
+    font-size: 0.8rem;         
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Right Snapshot Card (Tall & Slim Grid) */
+.homeh2 {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex: 0.9;                 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    gap: 8px;
+}
+
+.homeh2 h3 {
+    font-size: 1.1rem;   
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.homeh2 h2 {
+    font-size: 1.05rem;
+    color: #475569;
+    text-align: center;
+}
+
+.homeh2 h2:nth-of-type(odd) {
+    color: #1f77b4;
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+/* Horizontal alignment flex container for graphs */
+.graph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 100%;
+    height: 45vh;              
+}
+
+/* Updated graph rules (Full block cover optimization) */
+.graph1, .graph2 {
+    width: 49%;          
+    height: 100%;      
+    background-color: #ffffff;
+    padding: 10px;             
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.graph1 img, .graph2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;         
+    display: block;
+}
+
+CSS
+/* ==========================================================================
+   5. STATS PAGE DESIGN MODULE (Balanced Grid & Proportionate Image)
+   ========================================================================== */
+.stath1 {
+    width: 100%;
+    border-bottom: 3px solid #0f4c81;
+    padding-bottom: 5px;
+}
+
+/* Top Row: Holds player image box and stats block grid side-by-side */
+.stats-main-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 38vh;      
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Left Side Image Frame - Tuned to keep portrait dimensions natural */
+.statimg {
+    width: 22%;        /* Adjusted slightly narrower to fit a portrait cricket photo */
+    height: 100%;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statimg img {
+    height: 100%;      
+    width: auto;       /* CHANGED: Prevents horizontal stretching */
+    max-width: 100%;   /* Keeps it confined safely to the box wrapper */
+    object-fit: contain; 
+}
+
+/* Right Side Stats Blocks Structure (Balanced 3 Columns x 2 Rows) */
+.stats-grid-container {
+    width: 78%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    /* Forces both rows to be exactly 50/50 split height */
+    gap: 15px;          
+}
+
+/* Unified structural block settings */
+.statblock1, .statblock2, .statblock3, .statblock4, .statblock5, .statblock6 {
+    background-color: #ffffff;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;      /* NEW: Horizontally centers content items (like the <p> labels) */
+    text-align: center;       /* NEW: Centers the text inside the headers and paragraphs */
+    gap: 6px;
+    height: 100%;            
+}
+
+.statblock1 h3, .statblock2 h3, .statblock3 h3, 
+.statblock4 h3, .statblock5 h3, .statblock6 h3 {
+    font-size: 1.2rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.statblock1 h2, .statblock2 h2, .statblock3 h2, 
+.statblock4 h2, .statblock5 h2, .statblock6 h2 {
+    font-size: 1.6rem;
+    color: #0f4c81;
+    font-weight: 700;
+}
+
+.statblock1 p, .statblock2 p, .statblock3 p, .statblock6 p {
+    font-size: 0.6rem;
+    color: #475569;
+    font-weight: 600;
+    background-color: #f8fafc;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border-left: 3px solid #1f77b4;
+}
+
+/* Bottom Row Frame: Full Edge to Edge Visual Area for Graph 3 */
+.graph3 {
+    width: 100%;
+    height: 45vh;      
+    background-color: #ffffff;
+    padding: 10px;     
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.graph3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;  
+    display: block;
+}
+/* ==========================================================================
+   6. HISTORICAL DATA PAGE DESIGN MODULE (Filters & Tables)
+   ========================================================================== */
+.hisdrop {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    padding: 5px;
+    padding: 12px; 
     background-color: #f0f4f8;
     border-radius: 8px;
+    border: 1px solid rgba(15, 76, 129, 0.2);
+    box-shadow: 
+        0 0 5px rgba(15, 76, 129, 0.1),
+        0 0 15px rgba(15, 76, 129, 0.15),
+        0 0 25px rgba(15, 76, 129, 0.1);
 }
-.hisformat,.hisyear,.hisoppos,.hislocat{
+
+.hisformat, .hisyear, .hisoppos, .hislocat {
     display: flex;
     flex-direction: column;
     gap: 4px;
     flex: 1;
 }
+
 select {
-  width: 100%;
-  padding: 6px;
-  font-size: 14px;
-  color: #334155;
-  border: 1px solid #cbd5e1; 
-  border-radius: 6px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  outline: none;
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    color: #334155;
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    outline: none;
 }
 
 select:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
-select::-webkit-scrollbar {
-  width: 8px
-}
-select::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 0 6px 6px 0;
-}
-select::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-select::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
+
 option {
-  padding: 6px 8px; 
-  border-radius: 4px;
+    padding: 6px 8px; 
+    border-radius: 4px;
 }
-table{
+
+/* Table Management Architecture */
+.table-scroll-container {
+    flex: 1;              
+    overflow-y: auto;     
     border: 1px solid #ccc;
-    border-spacing: 0;
     border-radius: 8px;
+    background-color: #ffffff;
 }
-tr,th,td{
-    padding: 5px;
-    text-align: center;
-    border: 1px solid #ccc;
+
+table {
+    border-collapse: separate; 
+    border-spacing: 0;         
+    width: 100%;
 }
-.tablewhite{
-    background-color: #fff;
-}
-thead{
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     background-color: #e2e9f3;
 }
-.tableblue{
+
+th, td {
+    padding: 5px;             
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+.tablewhite {
+    background-color: #ffffff;
+}
+
+.tableblue {
     background-color: #e7f1fb;
+}
+
+/* Webkit Scrollbars Custom Styling */
+select::-webkit-scrollbar,
+.table-scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 0 6px 6px 0;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+select::-webkit-scrollbar-thumb,
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover,
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ==========================================================================
+   7. INTERACTIVE NATIVE TRAJECTORY GRAPH MODULE
+   ========================================================================== */
+.chart-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 40px 65px; /* Clear safety margin padding space for structural axes labels */
+}
+
+.chart-main-title {
+    font-size: 1.15rem;
+    color: #0f4c81;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: none;
+    letter-spacing: 0.2px;
+}
+
+/* Timeline Space Box Canvas Core */
+.trajectory-timeline-container {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    border-left: 2px solid #cbd5e1;
+    border-bottom: 2px solid #cbd5e1;
+    margin-top: 15px;
+}
+
+/* Background Grid Alignment System */
+.grid-lines-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.grid-lines-bg span {
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed rgba(203, 213, 225, 0.6);
+}
+
+/* Grid Line Horizontals overlay */
+.trajectory-timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(203, 213, 225, 0.2) 1px, transparent 1px);
+    background-size: 100% 18%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Trajectory Vector Line Graphic */
+.trajectory-line-vector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.trajectory-line-vector polyline {
+    fill: none;
+    stroke: #0f4c81;
+    stroke-width: 4.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Plot Node Points Configuration */
+.milestone-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.interactive-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+    border: 3.5px solid #0f4c81;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.milestone-node:hover .interactive-dot {
+    transform: scale(1.35);
+    background-color: #1f77b4;
+}
+
+/* Core Axis Metrics Elements Labels Placement Engine */
+.axis-label {
+    position: absolute;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.axis-label.x-axis {
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.axis-label.y-axis {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+/* Text Axis Title Markers */
+.x-axis-title-label {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.y-axis-title-label {
+    position: absolute;
+    /* CHANGED: Aligns it perfectly with the left border of the inner graph box */
+    left: 65px;                 
+    /* CHANGED: Safely places it directly above the grid area inside the wrapper padding */
+    top: 38px;                 
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #475569;
+    white-space: nowrap;
+    transform: none;            
+}
+
+/* Data Tooltips Engine Box System - Hidden by default */
+.milestone-tooltip {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #bae6fd;
+    padding: 5px 8px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(15, 76, 129, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    
+    /* NEW: This hides the text boxes completely on page load */
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.9); /* Starts slightly smaller */
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Tooltip Direction Positioning Filters (Adjusted for animations) */
+.milestone-tooltip.position-top {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    transform-origin: bottom center;
+}
+
+.milestone-tooltip.position-bottom {
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    transform-origin: top center;
+}
+
+.milestone-tooltip.position-right {
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    transform-origin: left center;
+}
+
+/* NEW HOVER ACTION: Shows the information ONLY when the mouse pointer is on the dot */
+.milestone-node:hover .milestone-tooltip.position-top {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    border-color: #0f4c81;
+}
+
+.milestone-node:hover .milestone-tooltip.position-bottom {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    border-color: #0f4c81;
+}
+
+.milestone-node:hover .milestone-tooltip.position-right {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    border-color: #0f4c81;
 }
