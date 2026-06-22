@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Manger</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">&#x1F36A;</div>
+            <div class="text">
+                <h1>Cookie Manger</h1>
+                <p>PHP Cookie Lifecycle Demo</p>
+            </div>
+            <br>
+        </header>
+        <main>
+            <div class="block">
+                <div class="blocklogo">&#x2795;</div>
+                <div class="blocktext">
+                    <h2>Create Cookie</h2>
+                    <p>setcookie("username1", "Faizan", time() + 3600)</p>
+                </div>
+                <div class="blocksubtext"></div>
+            </div>
+            <div class="block">
+                <div class="blocklogo">&#x1F50D;</div>
+                <div class="blocktext"><h2>Check Cookie</h2><p>isset($_COOKIE['username1'])</p></div>
+            </div>
+            <div class="block">
+                <div class="blocklogo">&#128465;</div>
+                <div class="blocktitle"><h2>Delete Cookie</h2><p>setcookie("username1", "", time() - 3600)</p></div>
+            </div>
+        </main>
+        <footer>
+            <div class="block1">
+                <div class="endtext">
+                    <ul>
+                        <li>&check;Cookie Created Successfully! Value Faizan</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
