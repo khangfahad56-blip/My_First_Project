@@ -1,0 +1,68 @@
+.line1 {
+  color: #ff007f;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+.line2 {
+  line-height: 3rem;
+  color: #ffffff;
+  font-size: 3rem;
+}
+.line3 {
+  line-height: 3rem;
+  color: #00f0ff;
+  font-size: 2rem;
+}
+.line4 {
+  color: #b0a2c7;
+  font-size: 18px;
+}
+.text {
+  padding: 4rem 0px 2rem 4rem ;
+}
+.button button{
+    padding: 10px 25px;
+    margin: 0px 2rem 2rem 4rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00f0ff 0%, #ff007f 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+.button a{
+    padding: 10px 25px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00f0ff 0%, #ff007f 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    text-decoration: none;
+}
+.button a:hover{
+    background: linear-gradient(135deg, #ff007f 0%, #00f0ff 100%);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
+}
+.button button:hover{
+    background: linear-gradient(135deg, #ff007f 0%, #00f0ff 100%);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
+}
+.icon{
+    margin: 0px 0px 2rem 4rem;
+    filter: invert(1); /* Turns black SVGs into white */
+    transition: all 0.3s ease;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.image img{
+    padding: 3rem;
+    background-color: #fff;
+    display: flex;
+    width: 300px;
+    height: 350px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
