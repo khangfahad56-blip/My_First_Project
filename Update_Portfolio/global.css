@@ -28,7 +28,6 @@ nav{
     text-decoration: none;
     padding: 32px;
     color: #fff600;
-    transition: color 0.3s ease;
 }
 .hireme{
     padding: 10px 25px;
@@ -49,7 +48,6 @@ nav{
 body{
     background: linear-gradient(135deg, #0b0214 0%, #17052e 40%, #3a0d5c 80%, #1f0436 100%);
     background-repeat: no-repeat;
-    min-height: 100vh;
 }
 a:hover{
     color: #ff007f;
@@ -66,7 +64,4 @@ footer{
     padding: 16px;
     text-align: center;
     width: 100%;
-}
-main{
-    height: 79vh;
 }
