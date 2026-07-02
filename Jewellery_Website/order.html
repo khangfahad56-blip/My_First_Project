@@ -74,7 +74,7 @@
                     <p>These are our most ordered products. You can select multiple items.</p>
                 </div>
                 <div class="order-product-grid">
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="solitaire-diamond-ring" data-product-name="Solitaire Diamond Ring" data-product-category="rings" data-product-metal="18K Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400" alt="Solitaire Diamond Ring">
                         </div>
@@ -85,7 +85,7 @@
                             <span class="product-tag">Bestseller</span>
                         </div>
                     </div>
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="traditional-necklace" data-product-name="Traditional Necklace" data-product-category="necklaces" data-product-metal="22K Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400" alt="Traditional Necklace">
                         </div>
@@ -96,7 +96,7 @@
                             <span class="product-tag popular-tag">Popular</span>
                         </div>
                     </div>
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="heritage-bangles" data-product-name="Heritage Bangles (Set of 2)" data-product-category="bangles" data-product-metal="22K Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400" alt="Heritage Bangles">
                         </div>
@@ -106,7 +106,7 @@
                             <p class="order-product-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="traditional-jhumkas" data-product-name="Traditional Jhumkas" data-product-category="earrings" data-product-metal="22K Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400" alt="Traditional Jhumkas">
                         </div>
@@ -117,7 +117,7 @@
                             <span class="product-tag">New Arrival</span>
                         </div>
                     </div>
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="bridal-gold-set" data-product-name="Bridal Gold Set" data-product-category="wedding" data-product-metal="22K Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400" alt="Bridal Gold Set">
                         </div>
@@ -128,7 +128,7 @@
                             <span class="product-tag premium-tag">Premium</span>
                         </div>
                     </div>
-                    <div class="order-product-card">
+                    <div class="order-product-card" data-order-product data-product-id="diamond-tennis-bracelet" data-product-name="Diamond Tennis Bracelet" data-product-category="bracelets" data-product-metal="18K White Gold">
                         <div class="order-product-img">
                             <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400" alt="Tennis Bracelet">
                         </div>
@@ -150,7 +150,7 @@
                     <p>We'll get back to you within 2 hours to confirm your order</p>
                 </div>
                 <div class="form-wrapper">
-                    <form action="#" method="POST" class="order-form">
+                    <form action="#" method="POST" class="order-form" data-validate-form data-form-type="order" data-api-endpoint="/api/orders" novalidate>
                         <fieldset class="form-fieldset">
                             <legend>Personal Information</legend>
                             <div class="form-row">
@@ -333,8 +333,22 @@
             <p>&copy; <span data-current-year>2026</span> Fahad Jeweller. All rights reserved.</p>
         </div>
     </footer>
+    <button class="scroll-to-top" type="button" aria-label="Scroll to top" aria-hidden="true" data-scroll-to-top tabindex="-1">
+        &#8593;
+    </button>
+    <script src="js/utils.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/footer-year.js"></script>
     <script src="js/active-navigation.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/order-products.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

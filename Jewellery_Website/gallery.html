@@ -76,6 +76,31 @@
             </div>
         </section>
 
+        <section class="gallery-tools-section" data-gallery-controls>
+            <div class="container">
+                <div class="gallery-tools">
+                    <div class="gallery-search-group">
+                        <label for="gallery-search">Search Jewellery</label>
+                        <input type="search" id="gallery-search" placeholder="Search rings, bangles, bridal sets..." data-gallery-search>
+                    </div>
+                    <div class="gallery-filter-group">
+                        <label for="gallery-category-filter">Filter Category</label>
+                        <select id="gallery-category-filter" data-gallery-category-filter>
+                            <option value="all">All Categories</option>
+                            <option value="rings">Rings</option>
+                            <option value="necklaces">Necklaces</option>
+                            <option value="bracelets">Bracelets</option>
+                            <option value="earrings">Earrings</option>
+                            <option value="bangles">Bangles</option>
+                            <option value="wedding">Wedding Collection</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-outline" data-gallery-clear>Clear</button>
+                    <p class="gallery-results" data-gallery-results aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
         <section id="rings" class="gallery-category">
             <div class="container">
                 <div class="category-header">
@@ -83,9 +108,9 @@
                     <p>From engagement rings to fashion statements, each piece is a masterpiece</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="rings" data-product-name="Solitaire Diamond Ring" data-product-metal="18K Gold Premium Diamond">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600" alt="Solitaire Diamond Ring" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600" alt="Solitaire Diamond Ring" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -96,9 +121,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="rings" data-product-name="Classic Gold Band" data-product-metal="22K Gold Pure Gold">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600" alt="Gold Band Ring" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600" alt="Gold Band Ring" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -109,9 +134,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="rings" data-product-name="Ruby Royal Ring" data-product-metal="18K Gold Natural Ruby">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1603561596112-0a132b757442?w=600" alt="Ruby Embedded Ring" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1603561596112-0a132b757442?w=600" alt="Ruby Embedded Ring" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -122,9 +147,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="rings" data-product-name="Eternal Couple Bands" data-product-metal="22K Gold Matching Set">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600" alt="Couple Band Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600" alt="Couple Band Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -146,9 +171,9 @@
                     <p>Adorn your neckline with our exquisite handcrafted designs</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="necklaces" data-product-name="Traditional Necklace Set" data-product-metal="22K Gold Handcrafted">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600" alt="Traditional Gold Necklace" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600" alt="Traditional Gold Necklace" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -159,9 +184,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="necklaces" data-product-name="Diamond Pendant Set" data-product-metal="18K Gold Diamond Collection">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Pendant Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Pendant Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -172,9 +197,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="necklaces" data-product-name="Pearl Elegance" data-product-metal="18K Gold Freshwater Pearls">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600" alt="Pearl Necklace" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600" alt="Pearl Necklace" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -185,9 +210,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="necklaces" data-product-name="Royal Choker" data-product-metal="22K Gold Kundan Work">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600" alt="Choker Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600" alt="Choker Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -209,9 +234,9 @@
                     <p>Delicate designs that wrap your wrist in elegance</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="bracelets" data-product-name="Golden Chain Bracelet" data-product-metal="22K Gold Filigree Work">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600" alt="Gold Chain Bracelet" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600" alt="Gold Chain Bracelet" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -222,9 +247,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="bracelets" data-product-name="Tennis Bracelet" data-product-metal="18K White Gold Diamond">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600" alt="Diamond Tennis Bracelet" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600" alt="Diamond Tennis Bracelet" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -235,9 +260,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="bracelets" data-product-name="Traditional Kada" data-product-metal="22K Gold Embossed Design">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600" alt="Traditional Kada Bracelet" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600" alt="Traditional Kada Bracelet" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -259,9 +284,9 @@
                     <p>Frame your face with our stunning earring designs</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="earrings" data-product-name="Traditional Jhumkas" data-product-metal="22K Gold Handcrafted">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600" alt="Traditional Jhumka Earrings" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600" alt="Traditional Jhumka Earrings" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -272,9 +297,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="earrings" data-product-name="Diamond Studs" data-product-metal="18K Gold Premium Diamond">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=600" alt="Diamond Stud Earrings" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=600" alt="Diamond Stud Earrings" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -285,9 +310,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="earrings" data-product-name="Chandbali Elegance" data-product-metal="22K Gold Pearl Droplets">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600" alt="Chandbali Earrings" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600" alt="Chandbali Earrings" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -309,9 +334,9 @@
                     <p>The perfect blend of tradition and modern design</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="bangles" data-product-name="Heritage Bangles" data-product-metal="22K Gold Set of 2">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600" alt="Designer Gold Bangles" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600" alt="Designer Gold Bangles" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -322,9 +347,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="bangles" data-product-name="Diamond Bangle" data-product-metal="18K Gold Diamond">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Bangle" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Bangle" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -346,9 +371,9 @@
                     <p>Make your special day unforgettable with our bridal jewellery</p>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="wedding" data-product-name="Bridal Gold Set" data-product-metal="22K Gold Complete Set">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600" alt="Bridal Gold Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600" alt="Bridal Gold Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -359,9 +384,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="wedding" data-product-name="Diamond Bridal Set" data-product-metal="18K Gold Premium Diamond">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Bridal Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600" alt="Diamond Bridal Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -372,9 +397,9 @@
                             <p class="gallery-price">Contact for Price</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-gallery-item data-product-category="wedding" data-product-name="Maang Tikka Set" data-product-metal="22K Gold Kundan Pearl">
                         <div class="gallery-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600" alt="Maang Tikka Bridal Set" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600" alt="Maang Tikka Bridal Set" class="gallery-img" data-lightbox-image>
                             <div class="gallery-overlay">
                                 <span class="overlay-text">View Details</span>
                             </div>
@@ -415,8 +440,22 @@
             <p>&copy; <span data-current-year>2026</span> Fahad Jeweller. All rights reserved.</p>
         </div>
     </footer>
+    <button class="scroll-to-top" type="button" aria-label="Scroll to top" aria-hidden="true" data-scroll-to-top tabindex="-1">
+        &#8593;
+    </button>
+    <script src="js/utils.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/footer-year.js"></script>
     <script src="js/active-navigation.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/order-products.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

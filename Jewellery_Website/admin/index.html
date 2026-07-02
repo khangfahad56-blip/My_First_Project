@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahad Jeweller Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main class="admin-shell">
+        <section class="login-panel" data-login-panel>
+            <form class="admin-card" data-login-form>
+                <h1>Fahad Jeweller Admin</h1>
+                <label>
+                    Email
+                    <input type="email" name="email" required autocomplete="email">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" required autocomplete="current-password">
+                </label>
+                <button type="submit">Login</button>
+                <p class="admin-message" data-login-message></p>
+            </form>
+        </section>
+
+        <section class="dashboard-panel" data-dashboard-panel hidden>
+            <header class="admin-header">
+                <div>
+                    <p class="eyebrow">Business System</p>
+                    <h1>Fahad Jeweller Dashboard</h1>
+                </div>
+                <button type="button" data-logout>Logout</button>
+            </header>
+
+            <nav class="admin-tabs" aria-label="Admin sections">
+                <button type="button" data-tab="overview" class="active">Overview</button>
+                <button type="button" data-tab="products">Products</button>
+                <button type="button" data-tab="categories">Categories</button>
+                <button type="button" data-tab="gallery">Gallery</button>
+                <button type="button" data-tab="rates">Rates</button>
+                <button type="button" data-tab="orders">Orders</button>
+                <button type="button" data-tab="messages">Messages</button>
+                <button type="button" data-tab="settings">Settings</button>
+            </nav>
+
+            <section class="admin-section active" data-section="overview">
+                <div class="stats-grid" data-stats></div>
+                <div class="split-grid">
+                    <article class="admin-card">
+                        <h2>Recent Orders</h2>
+                        <div data-recent-orders></div>
+                    </article>
+                    <article class="admin-card">
+                        <h2>Recent Messages</h2>
+                        <div data-recent-messages></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="admin-section" data-section="products">
+                <article class="admin-card">
+                    <h2>Manage Products</h2>
+                    <form class="admin-form grid-form" data-product-form>
+                        <input type="hidden" name="id">
+                        <input name="name" placeholder="Product name" required>
+                        <select name="category_id" data-category-options></select>
+                        <input name="metal_type" placeholder="Metal type">
+                        <input name="purity" placeholder="Purity">
+                        <input name="weight_grams" type="number" step="0.01" placeholder="Weight grams">
+                        <input name="price_note" placeholder="Price note" value="Contact for Price">
+                        <label class="inline"><input type="checkbox" name="is_available" checked> Available</label>
+                        <label class="inline"><input type="checkbox" name="is_featured"> Featured</label>
+                        <textarea name="description" placeholder="Description"></textarea>
+                        <button type="submit">Save Product</button>
+                    </form>
+                    <div data-products-list></div>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="categories">
+                <article class="admin-card">
+                    <h2>Manage Categories</h2>
+                    <form class="admin-form grid-form" data-category-form>
+                        <input type="hidden" name="id">
+                        <input name="name" placeholder="Category name" required>
+                        <input name="sort_order" type="number" placeholder="Sort order" value="0">
+                        <label class="inline"><input type="checkbox" name="is_active" checked> Active</label>
+                        <textarea name="description" placeholder="Description"></textarea>
+                        <button type="submit">Save Category</button>
+                    </form>
+                    <div data-categories-list></div>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="gallery">
+                <article class="admin-card">
+                    <h2>Manage Gallery</h2>
+                    <form class="admin-form grid-form" data-gallery-form enctype="multipart/form-data">
+                        <input name="title" placeholder="Image title" required>
+                        <input name="alt_text" placeholder="Alt text" required>
+                        <select name="category_id" data-category-options></select>
+                        <select name="product_id" data-product-options></select>
+                        <input name="image" type="file" accept="image/jpeg,image/png,image/webp">
+                        <input name="image_url" placeholder="Or external image URL">
+                        <label class="inline"><input type="checkbox" name="is_featured"> Featured</label>
+                        <button type="submit">Upload Image</button>
+                    </form>
+                    <div data-gallery-list></div>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="rates">
+                <article class="admin-card">
+                    <h2>Gold & Silver Rates</h2>
+                    <form class="admin-form grid-form" data-rates-form>
+                        <input name="gold_24k" type="number" step="0.01" placeholder="24K Gold" required>
+                        <input name="gold_22k" type="number" step="0.01" placeholder="22K Gold" required>
+                        <input name="gold_21k" type="number" step="0.01" placeholder="21K Gold">
+                        <input name="gold_18k" type="number" step="0.01" placeholder="18K Gold" required>
+                        <input name="silver" type="number" step="0.01" placeholder="Silver" required>
+                        <input name="rate_date" type="date">
+                        <button type="submit">Update Rates</button>
+                    </form>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="orders">
+                <article class="admin-card">
+                    <h2>Orders</h2>
+                    <div data-orders-list></div>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="messages">
+                <article class="admin-card">
+                    <h2>Contact Messages</h2>
+                    <div data-messages-list></div>
+                </article>
+            </section>
+
+            <section class="admin-section" data-section="settings">
+                <article class="admin-card">
+                    <h2>Website Settings</h2>
+                    <form class="admin-form grid-form" data-settings-form>
+                        <input name="store_phone" placeholder="Store phone">
+                        <input name="store_email" placeholder="Store email">
+                        <input name="store_address" placeholder="Store address">
+                        <input name="whatsapp" placeholder="WhatsApp">
+                        <button type="submit">Save Settings</button>
+                    </form>
+                </article>
+            </section>
+        </section>
+    </main>
+    <div class="toast-region" data-admin-toast aria-live="polite"></div>
+    <script src="admin.js"></script>
+</body>
+</html>
