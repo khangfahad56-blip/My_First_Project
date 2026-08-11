@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --primary: #2563eb; /* blue */
+    --primary-600: #1e40af;
+    --muted: #6b7280;
+    --accent: #10b981; /* green */
+    --shadow: 0 6px 18px rgba(16,24,40,0.08);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height:100%;
+}
+
+body{
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #eef2ff 80%);
+    color: #111827;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    padding:3rem 2rem 6rem;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* Page container: center and constrain width */
+body > *{
+    width:100%;
+    max-width:860px;
+}
+
+.heading1{
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--primary-600);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.paragraph1{
+    margin: 0 0 1.25rem 0;
+    padding: 0.9rem 1rem;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    color: var(--muted);
+    line-height: 1.45;
+    font-size: 0.98rem;
+}
+
+.box1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 1.25rem 0;
+}
+
+.paragraph2{
+    display:inline-block;
+    background: linear-gradient(180deg, #fff, #f8fafc);
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(15,23,42,0.04);
+    font-weight: 600;
+    color: #0f172a;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+#scorevalue{
+    display:inline-block;
+    min-width:2.2ch;
+    text-align:right;
+    margin-right:0.5rem;
+    color: var(--primary-600);
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.box2{
+    margin-top:1.25rem;
+    display:flex;
+    flex-direction:row;
+    gap:0.75rem;
+    align-items:center;
+    width:100%;
+}
+
+button{
+    appearance:none;
+    -webkit-appearance:none;
+    border: none;
+    background: var(--card);
+    color: var(--primary-600);
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    min-width:120px;
+    font-weight:600;
+    font-size:0.95rem;
+    box-shadow: 0 4px 12px rgba(2,6,23,0.06);
+    cursor:pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+}
+
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+}
+
+/* primary action */
+#button2{
+    background: var(--primary);
+    color: #fff;
+}
+
+/* danger / subtract */
+#button3{
+    background: #ef4444;
+    color: #fff;
+}
+
+/* reset/neutral */
+#button1{
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(15,23,42,0.06);
+}
+
+button:active{
+    transform: translateY(-1px) scale(.998);
+}
+
+/* place subtract to left, reset center, add to right */
+#button3{ /* Subtract */
+    margin: 0;
+}
+
+#button1{ /* Reset */
+    margin: 0;
+}
+
+#button2{ /* Add */
+    margin: 0;
+}
+
+/* make buttons stack vertically and be narrower on wide screens */
+button{
+    min-width:120px;
+    width: min(320px, 90%);
+    max-width:360px;
+}
+
+@media (max-width:420px){
+    .paragraph1{padding:0.75rem}
+    .paragraph2{font-size:1.05rem}
+    button{min-width:100px;padding:0.55rem 0.75rem}
+}
+
+/* accessibility focus */
+button:focus{outline:3px solid rgba(37,99,235,0.14);outline-offset:3px}

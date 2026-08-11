@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer Gold Diamond Shield -->
+  <path d="M50 8 L88 30 V70 L50 92 L12 70 V30 Z" stroke="#C5A059" stroke-width="2.5" fill="#0C1636"/>
+  <!-- Inner Diamond Facet Lines -->
+  <path d="M50 16 L76 34 M50 16 L24 34 M50 16 V84 M24 34 L76 34 M24 34 L50 84 M76 34 L50 84" stroke="#E6CA85" stroke-width="1.2" stroke-opacity="0.6"/>
+  <!-- Central FJ Monogram -->
+  <text x="50" y="58" font-family="'Lora', 'Georgia', serif" font-size="28" font-weight="bold" fill="#C5A059" text-anchor="middle" letter-spacing="1">FJ</text>
+</svg>

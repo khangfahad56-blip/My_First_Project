@@ -1,0 +1,5 @@
+node_modules/
+db/nutrition.db
+db/nutrition.db-shm
+db/nutrition.db-wal
+*.log

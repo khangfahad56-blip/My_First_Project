@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="output.css" /> -->
+    <style>
+      aside{
+        grid-area: aside;
+      }
+      main{
+        grid-area: main;
+      }
+      body{
+        display: grid;
+        grid-template-areas: 
+        "aside main main main";
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="flex flex-col bg-red-200">
+      <section class="asidetitle w-64 h-28 place-items-center">
+        <h2 class="text-3xl font-bold">Flavoria</h2>
+        <p class="text-xs">R E S T A U R A N T</p>
+      </section>
+      <section class="asidegreeting">
+        <h2 class="text-6xl font-bold">Our</h2>
+        <h2>Menu</h2>
+        <hr />
+        <p>Good food, good mood.</p>
+        <p>Made with love.</p>
+      </section>
+    </aside>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Specials</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <button>Book a Table</button>
+        <hr />
+      </nav>
+      <section class="foodselection">
+        <button>All</button>
+        <button>Starters</button>
+        <button>Main Course</button>
+        <button>Desserts</button>
+        <button>Drinks</button>
+      </section>
+      <section>
+        <div class="box1">
+          <img src="Assets/Food_images/1st_image.jpg" alt="">
+          <h3>Creamy Mushroom Soup</h3>
+          <p>Creamy soup with wild mushrooms and herbs.</p>
+          <h3>$4.99</h3>
+          <button>+</button>
+        </div>
+        <div class="box2">
+          <img src="Assets/Food_images/2nd_image.jpg" alt="">
+          <h3>Bruschetta</h3>
+          <p>Toasted bread with tomato, garlic, basil & olive oil.</p>
+          <h3>$5.49</h3>
+          <button>+</button>
+        </div>
+        <div class="box3">
+          <img src="Assets/Food_images/3rd_image.jpg" alt="">
+          <h3>Caesar Salad</h3>
+          <p>Crisp romaine lettuce with caesar dressing & parmesan.</p>
+          <h3>$6.49</h3>
+          <button>+</button>
+        </div>
+        <div class="box4">
+          <img src="Assets/Food_images/4th_image.jpg" alt="">
+          <h3>Grilled Salmon</h3>
+          <p>Grilled salmon with lemon butter sauce & seasonal veggies.</p>
+          <h3>$14.99</h3>
+          <button>+</button>
+        </div>
+        <div class="box5">
+          <img src="Assets/Food_images/5th_image.jpg" alt="">
+          <h3>Spaghetti Bolognese</h3>
+          <p>Classic spaghetti with rich beef bolognese sauce.</p>
+          <h3>$12.99</h3>
+          <button>+</button>
+        </div>
+        <div class="box6">
+          <img src="Assets/Food_images/6th_image.jpg" alt="">
+          <h3>Chocolate Lava Cake</h3>
+          <p>Warn Chocolate cake with a gooey Chocolate center</p>
+          <h3>6.99$</h3>
+          <button>+</button>
+        </div>
+        <div class="special">
+          <h2>Today Special</h2>
+          <p><span>Tiramisu</span> Classic Italian dessert made with coffee, mascarpone & cocoa</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

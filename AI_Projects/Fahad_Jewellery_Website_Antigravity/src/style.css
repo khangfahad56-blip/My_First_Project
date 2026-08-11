@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Nunito Sans', 'Gantari', sans-serif;
+    color: #1A1A1A;
+    background-color: #FFFFFF;
+  }
+}
+
+/* Custom luxury animation utilities */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; filter: blur(20px); }
+  50% { opacity: 0.7; filter: blur(28px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Custom Modal transition */
+.modal-backdrop {
+  background-color: rgba(12, 22, 54, 0.75);
+  backdrop-filter: blur(8px);
+}

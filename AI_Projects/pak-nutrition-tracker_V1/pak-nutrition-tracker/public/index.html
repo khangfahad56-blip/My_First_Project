@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pak Nutrition Tracker</title>
+<meta name="description" content="A modern calorie and macronutrient tracker for Pakistani foods." />
+
+<!-- Fonts: Poppins for display, Inter for body/data -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          sapphire: { 50:'#eef5fb',100:'#d7e9f6',200:'#aed2ed',300:'#7bb5df',400:'#4a93cc',500:'#2e78b3',600:'#215d92',700:'#1b4b73',800:'#163c5c',900:'#122f49' },
+          sky: { 400:'#4aa0c9', 500:'#2e86ab', 600:'#256c8a' },
+          saffron: { 400:'#f0b656', 500:'#e8a33d', 600:'#d18a24' },
+          leaf: { 400:'#5cb85c', 500:'#2f9e44', 600:'#25822f' },
+        },
+        boxShadow: {
+          soft: '0 8px 30px -8px rgba(27, 75, 115, 0.18)',
+          softer: '0 4px 16px -4px rgba(27, 75, 115, 0.12)',
+          glow: '0 0 0 4px rgba(46, 120, 179, 0.12)',
+        },
+        borderRadius: {
+          xl2: '1.25rem',
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="font-body bg-sapphire-50 text-sapphire-900 dark:bg-[#0b1826] dark:text-sapphire-50 transition-colors duration-300 min-h-screen">
+
+<!-- ============ APP SHELL ============ -->
+<div class="min-h-screen flex flex-col lg:flex-row">
+
+  <!-- Sidebar / Top Nav -->
+  <aside class="lg:w-64 lg:min-h-screen w-full bg-white/70 dark:bg-[#0f2136]/80 backdrop-blur-xl border-b lg:border-b-0 lg:border-r border-sapphire-100 dark:border-white/5 lg:sticky lg:top-0 z-30">
+    <div class="flex items-center justify-between lg:flex-col lg:items-stretch p-4 lg:p-6 lg:h-screen">
+      <div class="flex items-center gap-3 lg:mb-8">
+        <div class="w-10 h-10 rounded-xl2 bg-gradient-to-br from-sapphire-600 to-sky-500 flex items-center justify-center shadow-soft shrink-0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c-1 3-4 3.5-4 7a4 4 0 0 0 8 0c0-3.5-3-4-4-7Z" fill="white"/><path d="M12 14v7M8.5 21h7" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="leading-tight">
+          <h1 class="font-display font-700 text-lg text-sapphire-800 dark:text-white tracking-tight">Pak Nutrition</h1>
+          <p class="text-[11px] text-sapphire-400 dark:text-sapphire-300 font-medium -mt-0.5">Track. Eat well. Thrive.</p>
+        </div>
+      </div>
+
+      <!-- Nav links -->
+      <nav id="main-nav" class="hidden lg:flex flex-col gap-1 flex-1 overflow-y-auto">
+        <!-- injected by app.js -->
+      </nav>
+
+      <!-- Mobile nav toggle -->
+      <button id="mobile-nav-toggle" class="lg:hidden p-2 rounded-lg hover:bg-sapphire-100 dark:hover:bg-white/10">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="hidden lg:flex flex-col gap-3 mt-auto pt-4 border-t border-sapphire-100 dark:border-white/10">
+        <button id="theme-toggle" class="flex items-center gap-2 text-sm font-medium text-sapphire-500 dark:text-sapphire-200 hover:text-sapphire-700 dark:hover:text-white transition">
+          <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"/></svg>
+          <span id="theme-label">Light mode</span>
+        </button>
+        <p class="text-[11px] text-sapphire-300 dark:text-sapphire-500">All data stored locally &middot; no login needed</p>
+      </div>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <nav id="mobile-nav" class="lg:hidden hidden flex-col gap-1 px-4 pb-4"></nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 min-w-0">
+    <div id="page-container" class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+      <!-- Sections injected/rendered here by page controllers -->
+      <section id="section-dashboard" class="page-section"></section>
+      <section id="section-calculator" class="page-section hidden"></section>
+      <section id="section-tracker" class="page-section hidden"></section>
+      <section id="section-foods" class="page-section hidden"></section>
+      <section id="section-history" class="page-section hidden"></section>
+      <section id="section-progress" class="page-section hidden"></section>
+      <section id="section-reports" class="page-section hidden"></section>
+      <section id="section-settings" class="page-section hidden"></section>
+    </div>
+  </main>
+</div>
+
+<!-- Toast notifications -->
+<div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 items-end"></div>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="/js/api.js"></script>
+<script src="/js/state.js"></script>
+<script src="/js/calculator.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/tracker.js"></script>
+<script src="/js/foods.js"></script>
+<script src="/js/history.js"></script>
+<script src="/js/progress.js"></script>
+<script src="/js/reports.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

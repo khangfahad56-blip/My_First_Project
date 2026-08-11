@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak Nutrition Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Segoe UI', system-ui, sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h1 class="text-4xl font-bold text-blue-900 mb-2">🥗 Pak Nutrition Tracker</h1>
+            <p class="text-gray-600">Track your Pakistani food nutrition easily</p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="glass rounded-xl p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Today's Calories</p>
+                        <p id="today-calories" class="text-3xl font-bold text-blue-600">0</p>
+                    </div>
+                    <i class="fas fa-fire text-3xl text-blue-400"></i>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Protein</p>
+                        <p id="today-protein" class="text-3xl font-bold text-green-600">0g</p>
+                    </div>
+                    <i class="fas fa-dumbbell text-3xl text-green-400"></i>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Carbs</p>
+                        <p id="today-carbs" class="text-3xl font-bold text-orange-600">0g</p>
+                    </div>
+                    <i class="fas fa-bread-slice text-3xl text-orange-400"></i>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Fat</p>
+                        <p id="today-fat" class="text-3xl font-bold text-purple-600">0g</p>
+                    </div>
+                    <i class="fas fa-cheese text-3xl text-purple-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Food Search & Add -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="glass rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">🔍 Search Pakistani Foods</h2>
+                    <div class="flex gap-4 mb-4">
+                        <input type="text" id="food-search" placeholder="Search food..." class="flex-1 px-4 py-2 border rounded-lg" onkeyup="searchFoods()">
+                        <select id="meal-type" class="px-4 py-2 border rounded-lg">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="snack">Snack</option>
+                        </select>
+                        <input type="number" id="food-quantity" value="1" min="0.5" step="0.5" class="w-20 px-2 py-2 border rounded-lg">
+                        <button onclick="addMeal()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Add</button>
+                    </div>
+                    <div id="food-suggestions" class="hidden"></div>
+                    <div id="selected-food-info" class="hidden mt-4 p-4 bg-blue-50 rounded-lg"></div>
+                </div>
+
+                <!-- Today's Meals -->
+                <div class="glass rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">🍽️ Today's Meals</h2>
+                    <div id="meals-list">
+                        <p class="text-gray-500 text-center py-8">No meals added yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Calculator -->
+                <div class="glass rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">🧮 Calculator</h2>
+                    <div class="space-y-3">
+                        <select id="calc-gender" class="w-full px-3 py-2 border rounded-lg">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <input type="number" id="calc-age" placeholder="Age" value="25" class="w-full px-3 py-2 border rounded-lg">
+                        <input type="number" id="calc-height" placeholder="Height (cm)" value="170" class="w-full px-3 py-2 border rounded-lg">
+                        <input type="number" id="calc-weight" placeholder="Weight (kg)" value="70" class="w-full px-3 py-2 border rounded-lg">
+                        <button onclick="calculateNutrition()" class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Calculate</button>
+                    </div>
+                    <div id="calc-results" class="hidden mt-4 space-y-2"></div>
+                </div>
+
+                <!-- Water Tracker -->
+                <div class="glass rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">💧 Water</h2>
+                    <p class="text-4xl font-bold text-blue-600 text-center"><span id="water-count">0</span>/8</p>
+                    <div class="flex gap-2 mt-4">
+                        <button onclick="addWater(-1)" class="flex-1 py-2 bg-gray-200 rounded-lg">-</button>
+                        <button onclick="addWater(1)" class="flex-1 py-2 bg-blue-600 text-white rounded-lg">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

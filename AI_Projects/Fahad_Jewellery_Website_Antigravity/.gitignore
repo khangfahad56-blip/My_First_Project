@@ -1,0 +1,10 @@
+# Temporary and local files
+.tmp/
+.env
+credentials.json
+token.json
+__pycache__/
+*.pyc
+node_modules/
+dist/
+build/

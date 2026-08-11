@@ -1,0 +1,235 @@
+/* Pak Nutrition Tracker — custom styles layered on top of Tailwind utility classes */
+
+*, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-variant-numeric: tabular-nums;
+  overflow-x: hidden; /* prevents horizontal scroll/layout-shift from any transient wide content */
+}
+
+/* Cards should never force horizontal overflow on narrow/mobile viewports */
+.card, .grid, .page-section { max-width: 100%; }
+img, svg { max-width: 100%; }
+
+/* ===== Typography helpers ===== */
+.font-display { font-family: 'Poppins', sans-serif; }
+h1, h2, h3, .stat-number { font-family: 'Poppins', sans-serif; }
+
+/* ===== Card system ===== */
+.card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 30px -10px rgba(27, 75, 115, 0.15);
+  border: 1px solid rgba(27, 75, 115, 0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.dark .card {
+  background: #101f33;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px -12px rgba(0,0,0,0.5);
+}
+.card:hover { transform: translateY(-2px); }
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.dark .glass {
+  background: rgba(16, 31, 51, 0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== Nav links ===== */
+.nav-link {
+  display: flex; align-items: center; gap: .65rem;
+  padding: .6rem .85rem; border-radius: .85rem;
+  font-size: .875rem; font-weight: 500;
+  color: #45607a;
+  transition: all .15s ease;
+}
+.dark .nav-link { color: #9fb8cf; }
+.nav-link:hover { background: rgba(46,120,179,0.08); color: #1b4b73; }
+.dark .nav-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.nav-link.active {
+  background: linear-gradient(135deg, #1b4b73, #2e78b3);
+  color: #fff;
+  box-shadow: 0 6px 16px -6px rgba(27,75,115,0.5);
+}
+.nav-link svg { flex-shrink: 0; }
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #1b4b73, #2e78b3);
+  color: white; font-weight: 600; border-radius: .85rem;
+  padding: .65rem 1.25rem; font-size: .875rem;
+  box-shadow: 0 8px 20px -8px rgba(27,75,115,0.5);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -8px rgba(27,75,115,0.6); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  background: rgba(46,120,179,0.08);
+  color: #1b4b73; font-weight: 600; border-radius: .85rem;
+  padding: .6rem 1.1rem; font-size: .875rem;
+  transition: all .15s ease;
+}
+.dark .btn-secondary { background: rgba(255,255,255,0.06); color: #cfe3f4; }
+.btn-secondary:hover { background: rgba(46,120,179,0.16); }
+.dark .btn-secondary:hover { background: rgba(255,255,255,0.12); }
+
+.btn-ghost {
+  color: #6b8299; font-weight: 500; border-radius: .75rem; padding: .5rem .9rem; font-size: .8rem;
+  transition: all .15s ease;
+}
+.btn-ghost:hover { background: rgba(46,120,179,0.08); color: #1b4b73; }
+.dark .btn-ghost { color: #8fa8c0; }
+.dark .btn-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+/* ===== Inputs ===== */
+/* Every form control (text/number input, select, button-like control) shares a fixed
+   min-height so rows of mixed controls line up — fixes uneven sidebar/calculator layouts. */
+.input-field,
+select.input-field,
+.seg-btn,
+.btn-primary,
+.btn-secondary {
+  min-height: 2.55rem;
+  box-sizing: border-box;
+}
+
+.input-field {
+  width: 100%;
+  background: #f4f8fc;
+  border: 1.5px solid transparent;
+  border-radius: .85rem;
+  padding: .6rem .9rem;
+  font-size: .875rem;
+  color: #16253a;
+  transition: all .15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.dark .input-field { background: rgba(255,255,255,0.06); color: #fff; }
+
+/* Custom, consistent dropdown chevron for every <select class="input-field"> —
+   fixes inconsistent native dropdown rendering/alignment across browsers. */
+select.input-field {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b8299' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 1rem;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+.dark select.input-field {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239fb8cf' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+
+.input-field:hover { background: #eef4fa; }
+.dark .input-field:hover { background: rgba(255,255,255,0.09); }
+.input-field:focus, .input-field:focus-visible {
+  outline: none; border-color: #2e78b3; background: white;
+  box-shadow: 0 0 0 4px rgba(46,120,179,0.12);
+}
+.dark .input-field:focus, .dark .input-field:focus-visible { background: rgba(255,255,255,0.1); }
+.input-field::placeholder { color: #9db2c6; }
+.input-field:disabled { opacity: .55; cursor: not-allowed; }
+
+/* Small form label used throughout calculator/tracker/settings inputs */
+.form-label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #6b8299;
+  margin-bottom: .375rem;
+}
+.dark .form-label { color: #9fb8cf; }
+
+.seg-btn {
+  padding: .55rem .5rem; border-radius: .7rem; font-size: .8rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; cursor: pointer; transition: all .15s ease;
+  background: #f4f8fc; color: #5b7083; border: 1.5px solid transparent;
+}
+.dark .seg-btn { background: rgba(255,255,255,0.06); color: #9fb8cf; }
+.seg-btn:hover { background: #eef4fa; }
+.dark .seg-btn:hover { background: rgba(255,255,255,0.1); }
+.seg-btn:focus-visible { outline: 2px solid #2e78b3; outline-offset: 2px; }
+.seg-btn.active {
+  background: linear-gradient(135deg, #1b4b73, #2e78b3); color: white;
+  box-shadow: 0 6px 14px -6px rgba(27,75,115,0.5);
+}
+
+/* Preset "chip" buttons used for calorie-diff / walking-speed presets */
+button.chip {
+  cursor: pointer; border: 1.5px solid transparent; transition: all .15s ease;
+}
+button.chip:hover { background: rgba(46,120,179,0.18); }
+.dark button.chip:hover { background: rgba(255,255,255,0.14); }
+button.chip:focus-visible { outline: 2px solid #2e78b3; outline-offset: 2px; }
+.chip-active {
+  background: linear-gradient(135deg, #1b4b73, #2e78b3) !important;
+  color: white !important;
+}
+
+/* ===== Progress ring (calorie/macro visual) ===== */
+.ring-track { stroke: #e4edf5; }
+.dark .ring-track { stroke: rgba(255,255,255,0.08); }
+.ring-progress { stroke-linecap: round; transition: stroke-dashoffset 0.8s cubic-bezier(.4,0,.2,1); }
+
+.macro-bar-track { background: #eaf1f8; border-radius: 999px; overflow: hidden; }
+.dark .macro-bar-track { background: rgba(255,255,255,0.08); }
+.macro-bar-fill { height: 100%; border-radius: 999px; transition: width 0.6s cubic-bezier(.4,0,.2,1); }
+
+/* ===== Animations ===== */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { animation: fadeInUp 0.35s ease both; }
+.stagger > * { animation: fadeInUp 0.4s ease both; }
+.stagger > *:nth-child(1){animation-delay:.02s} .stagger > *:nth-child(2){animation-delay:.06s}
+.stagger > *:nth-child(3){animation-delay:.1s} .stagger > *:nth-child(4){animation-delay:.14s}
+.stagger > *:nth-child(5){animation-delay:.18s} .stagger > *:nth-child(6){animation-delay:.22s}
+.stagger > *:nth-child(7){animation-delay:.26s} .stagger > *:nth-child(8){animation-delay:.3s}
+.stagger > *:nth-child(9){animation-delay:.34s} .stagger > *:nth-child(10){animation-delay:.38s}
+
+@keyframes pulseSoft { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
+.animate-pulse-soft { animation: pulseSoft 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in, .stagger > *, .ring-progress, .macro-bar-fill { animation: none !important; transition: none !important; }
+}
+
+/* ===== Misc ===== */
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .3rem .7rem; border-radius: 999px; font-size: .75rem; font-weight: 600;
+  background: rgba(46,120,179,0.1); color: #1b4b73;
+}
+.dark .chip { background: rgba(255,255,255,0.08); color: #cfe3f4; }
+.chip.gold { background: rgba(232,163,61,0.15); color: #a8641c; }
+.dark .chip.gold { background: rgba(232,163,61,0.18); color: #f0c07f; }
+.chip.leaf { background: rgba(47,158,68,0.12); color: #1e6e2e; }
+.dark .chip.leaf { background: rgba(47,158,68,0.18); color: #86e29b; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(46,120,179,0.25); border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+table.data-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+table.data-table th { text-align: left; padding: .5rem .75rem; color: #6b8299; font-weight: 600; font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1.5px solid #eaf1f8; }
+.dark table.data-table th { color: #8fa8c0; border-color: rgba(255,255,255,0.08); }
+table.data-table td { padding: .6rem .75rem; border-bottom: 1px solid #f1f6fa; }
+.dark table.data-table td { border-color: rgba(255,255,255,0.05); }
+table.data-table tr:last-child td { border-bottom: none; }
+
+@media print {
+  aside, #toast-container, .no-print { display: none !important; }
+  main { width: 100% !important; }
+  body { background: white !important; }
+}
