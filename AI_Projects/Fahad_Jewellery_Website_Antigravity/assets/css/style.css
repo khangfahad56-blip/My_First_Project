@@ -1,0 +1,68 @@
+/* ============================================================
+   Fahad Jewellery - Custom CSS Enhancements
+   (Tailwind CSS loaded via CDN in all PHP pages)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Selection highlight */
+::selection { background-color: rgba(197,160,89,0.25); color: #0C1636; }
+
+/* Custom animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; filter: blur(20px); }
+  50%       { opacity: 0.7; filter: blur(28px); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float-slow  { animation: floatSlow 5s ease-in-out infinite; }
+.animate-pulse-glow  { animation: pulseGlow 6s ease-in-out infinite; }
+.animate-fade-in-up  { animation: fadeInUp 0.6s ease-out forwards; }
+
+/* Gold shimmer divider */
+.gold-shimmer {
+  background: linear-gradient(90deg, #C5A059 25%, #E6CA85 50%, #C5A059 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Navbar active state */
+.nav-link-active {
+  color: #C5A059 !important;
+  border-bottom: 2px solid #C5A059;
+}
+
+/* Product card hover */
+.product-card:hover .card-overlay { opacity: 1; }
+.card-overlay { transition: opacity 0.3s ease; opacity: 0; }
+
+/* Gold rate card gradient */
+.rate-card-gold  { background: linear-gradient(135deg, #0C1636 0%, #1a2850 100%); }
+.rate-card-silver{ background: linear-gradient(135deg, #3a3a4a 0%, #595970 100%); }
+
+/* WhatsApp button pulse */
+.whatsapp-pulse { animation: floatSlow 3s ease-in-out infinite; }
+
+/* Admin sidebar */
+.admin-sidebar-item:hover { background-color: rgba(197,160,89,0.1); }
+.admin-sidebar-active     { background-color: rgba(197,160,89,0.15); border-left: 3px solid #C5A059; }
+
+/* Toast notification */
+#toast { transition: transform 0.3s ease, opacity 0.3s ease; }
+
+/* Print-friendly hide */
+@media print { .no-print { display: none !important; } }
