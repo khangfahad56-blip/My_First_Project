@@ -1,0 +1,9 @@
+.para-color{
+    background-color: rgb(44, 39, 175);
+    color: rgb(0, 250, 58);    
+}
+.para-layout{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}

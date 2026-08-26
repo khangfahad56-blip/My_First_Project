@@ -27,7 +27,21 @@
 //   console.log(total);
 // };
 
-let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-num.forEach((val) => {
-  console.log(val * val);
-});
+// let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// num.forEach((val) => {
+//   console.log(val * val);
+// });
+
+// let marks = [97,67,31,95,86,89,57,99,100,41,76,45,91];
+// let ninety_marks = marks.filter((val)=>{return val>=90});
+// console.log(ninety_marks);
+
+// let user_num = prompt("Write a Number: ");
+// let nums = [];
+// for(let i = 1; i<=user_num; i++){
+//     nums[i-1] = i;
+// };
+// let sum_num = nums.reduce((x,y)=>{return x+y});
+// console.log(sum_num);
+// let mult_num = nums.reduce((x,y)=>{return x*y});
+// console.log(mult_num);
