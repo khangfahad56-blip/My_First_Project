@@ -1,4 +1,4 @@
-.para-color{
+/* .para-color{
     background-color: rgb(44, 39, 175);
     color: rgb(0, 250, 58);    
 }
@@ -6,4 +6,22 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
+} */
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.light_mode{
+    background-color: #FFF7EB;
+    color: #CC3A63;
+}
+.dark_mode{
+    background-color: #091413;
+    color: #B0E4CC;
+}
+#theme_btn{
+    padding: 10px 25px;
+    box-shadow: 5px 5px 5px black;
+}
+#theme_btn:active{
+    background-color: #edd4af;
 }
