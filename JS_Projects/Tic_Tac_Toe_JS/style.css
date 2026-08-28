@@ -12,8 +12,8 @@ h2 {
 .cross {
   color: red;
 }
-.tick {
-  color: green;
+.circle {
+  color: blue;
 }
 .container {
   display: grid;
