@@ -1,24 +1,35 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe JS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h2>Tic Tac Toe Game</h2>
-    <div class="container">
-      <div id="0" class="box"></div>
-      <div id="1" class="box"></div>
-      <div id="2" class="box"></div>
-      <div id="3" class="box"></div>
-      <div id="4" class="box"></div>
-      <div id="5" class="box"></div>
-      <div id="6" class="box"></div>
-      <div id="7" class="box"></div>
-      <div id="8" class="box"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <div class="msg_container hide">
+      <p class="msg">Winner</p>
+      <button class="start_btn">Start</button>
     </div>
-    <script src="app.js"></script>
-  </body>
+    <div class="container">
+      <h2>Tic Tac Toe Game</h2>
+      <div class="game">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <button class="rest_btn">Rest</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
 </html>
